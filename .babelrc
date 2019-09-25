@@ -1,0 +1,23 @@
+{
+  "presets": [
+    "babel-preset-react-app"
+  ],
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": [
+          "javascript",
+          "css",
+          "html"
+        ],
+        "plugins": [
+          "line-numbers",
+          "show-language"
+        ],
+        "theme": "tomorrow", //主题
+        "css": true
+      }
+    ]
+  ]
+}
