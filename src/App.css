@@ -2,10 +2,23 @@
 
 .content {
   height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
 }
 
 .loading {
   position: relative;
   left: 50%;
   top: 50%;
+}
+
+.code {
+  margin-top: 20px;
+}
+
+.app{
+  max-width: 300px;
+  height: 550px;
+  text-align: center;
+  margin: 0 auto;
 }

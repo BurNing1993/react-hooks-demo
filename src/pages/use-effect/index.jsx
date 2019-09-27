@@ -1,15 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "antd";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const UseState = () => {
+const UseEffect = () => {
   const [count, setCount] = useState(0);
-  const code = `import React, { useState } from 'react';
+  useEffect(() => {
+    document.title = `You clicked ${count} Times!`;
+    return () => {
+      document.title = "Default Title!"; // 有清除操作的 effect
+    };
+  }, [count]); // 仅在 count 更改时更新
+  const code = `import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
   
-  const UseState = () => {
+const UseEffect = () => {
     const [count, setCount] = useState(0);
+    useEffect(() => {
+      document.title = \`You clicked \${count} Times!\`
+      return () => {
+        document.title = 'Default Title!' // 有清除操作的 effect 
+      }
+    }, [count]);  // 仅在 count 更改时更新
     return (
       <>
         <div>
@@ -34,7 +46,7 @@ import { Button } from 'antd';
       </>
     )
   }
-  export default UseState;`;
+  export default UseEffect;`;
   return (
     <>
       <div className="top">
@@ -68,4 +80,4 @@ import { Button } from 'antd';
     </>
   );
 };
-export default UseState;
+export default UseEffect;

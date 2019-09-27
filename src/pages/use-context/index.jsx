@@ -1,24 +1,46 @@
-import React, { useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 import { Button } from "antd";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const UseState = () => {
+// 创建Context 对象
+const CountContext = createContext();
+
+const Counter = () => {
+  const count = useContext(CountContext);
+  return (
+    <>
+      <h2>Counter->{count}</h2>
+    </>
+  );
+};
+
+const UseContext = () => {
   const [count, setCount] = useState(0);
-  const code = `import React, { useState } from 'react';
-import { Button } from 'antd';
+  const code = `import React, { createContext, useState, useContext } from "react";
+import { Button } from "antd";
   
-  const UseState = () => {
+  // 创建Context 对象
+  const CountContext = createContext();
+  
+  const Counter = () => {
+    const count = useContext(CountContext);
+    return (
+      <>
+        <h2>Counter->{count}</h2>
+      </>
+    );
+  };
+  
+  const UseContext = () => {
     const [count, setCount] = useState(0);
     return (
       <>
-        <div>
-          You clicked {count} Times!
-        </div>
-        <Button 
-          type="primary" 
-          shape="round" 
-          icon="plus" 
+        <div>You clicked {count} Times!</div>
+        <Button
+          type="primary"
+          shape="round"
+          icon="plus"
           onClick={() => setCount(count + 1)}
         >
           Click
@@ -31,10 +53,13 @@ import { Button } from 'antd';
         >
           Reset
         </Button>
+        <CountContext.Provider value={count}>
+          <Counter />
+        </CountContext.Provider>
       </>
-    )
-  }
-  export default UseState;`;
+    );
+  };
+  export default UseContext;`;
   return (
     <>
       <div className="top">
@@ -55,6 +80,9 @@ import { Button } from 'antd';
         >
           Reset
         </Button>
+        <CountContext.Provider value={count}>
+          <Counter />
+        </CountContext.Provider>
       </div>
       <div className="code">
         <SyntaxHighlighter
@@ -68,4 +96,4 @@ import { Button } from 'antd';
     </>
   );
 };
-export default UseState;
+export default UseContext;
