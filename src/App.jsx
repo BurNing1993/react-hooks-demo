@@ -8,6 +8,7 @@ const UseState = React.lazy(() => import("./pages/use-state"));
 const UseEffect = React.lazy(() => import("./pages/use-effect"));
 const UseContext = React.lazy(() => import("./pages/use-context"));
 const UseReducer = React.lazy(() => import("./pages/use-reducer"));
+const ReduxHooks = React.lazy(() => import("./pages/redux-hooks"));
 
 const { Header, Content } = Layout;
 
@@ -38,6 +39,9 @@ function App() {
             <Menu.Item key="/use-reducer">
               <Link to="/use-reducer">useReducer</Link>
             </Menu.Item>
+            <Menu.Item key="/redux-hooks">
+              <Link to="/redux-hooks">ReduxHooks</Link>
+            </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: "0 50px" }}>
@@ -49,6 +53,7 @@ function App() {
                 <Route path="/use-effect" component={UseEffect} />
                 <Route path="/use-context" component={UseContext} />
                 <Route path="/use-reducer" component={UseReducer} />
+                <Route path="/redux-hooks" component={ReduxHooks} />
               </Suspense>
             </Card>
           </div>
