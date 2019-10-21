@@ -9,6 +9,7 @@ const UseEffect = React.lazy(() => import("./pages/use-effect"));
 const UseContext = React.lazy(() => import("./pages/use-context"));
 const UseReducer = React.lazy(() => import("./pages/use-reducer"));
 const ReduxHooks = React.lazy(() => import("./pages/redux-hooks"));
+const MobxHooks = React.lazy(() => import("./pages/mobx-hooks"));
 
 const { Header, Content } = Layout;
 
@@ -42,6 +43,9 @@ function App() {
             <Menu.Item key="/redux-hooks">
               <Link to="/redux-hooks">ReduxHooks</Link>
             </Menu.Item>
+            <Menu.Item key="/mobx-hooks">
+              <Link to="/mobx-hooks">MobxHooks</Link>
+            </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: "0 50px" }}>
@@ -54,6 +58,7 @@ function App() {
                 <Route path="/use-context" component={UseContext} />
                 <Route path="/use-reducer" component={UseReducer} />
                 <Route path="/redux-hooks" component={ReduxHooks} />
+                <Route path="/mobx-hooks" component={MobxHooks} />
               </Suspense>
             </Card>
           </div>

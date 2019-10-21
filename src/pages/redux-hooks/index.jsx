@@ -6,6 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const ReduxHooks = () => {
+  const shallCode = `yarn add redux react-redux`;
   const indexCode = `// index.jsx
 import React from 'react';
 import { Provider } from 'react-redux';
@@ -103,6 +104,15 @@ export default store;`;
   return (
     <Provider store={store}>
       <Counter />
+      <div className="code">
+        <SyntaxHighlighter
+          language="shall"
+          showLineNumbers
+          style={tomorrowNight}
+        >
+          {shallCode}
+        </SyntaxHighlighter>
+      </div>
       <div className="code">
         <SyntaxHighlighter
           language="react"

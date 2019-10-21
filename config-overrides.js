@@ -1,4 +1,4 @@
-const { override, fixBabelImports,useBabelRc } = require("customize-cra");
+const { override, fixBabelImports,useBabelRc,addDecoratorsLegacy,disableEsLint } = require("customize-cra");
 
 module.exports = override(
   fixBabelImports("import", {
@@ -7,4 +7,5 @@ module.exports = override(
     style: "css"
   }),
   useBabelRc(),
+  addDecoratorsLegacy(),
 );
