@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { HashRouter as Router, Link, Route } from "react-router-dom";
 import { Layout, Menu, Card } from "antd";
 import "./App.css";
 import Loading from "./components/Loading";
