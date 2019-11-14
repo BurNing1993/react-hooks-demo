@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { HashRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { Layout, Menu, Card } from "antd";
 import "./App.css";
 import Loading from "./components/Loading";
@@ -16,7 +16,7 @@ const { Header, Content } = Layout;
 function App() {
   const path = window.location.pathname;
   return (
-    <Router>
+    <Router basename="/react-hooks-demo" >
       <Layout className="layout">
         <Header>
           <Menu
