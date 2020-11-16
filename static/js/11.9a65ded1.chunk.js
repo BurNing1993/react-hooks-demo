@@ -1,0 +1,2 @@
+(window["webpackJsonpreact-hooks-demo"]=window["webpackJsonpreact-hooks-demo"]||[]).push([[11],{412:function(e,n,a){"use strict";a.r(n);var o=a(0),t=a.n(o),s=a(418),r=a(413);n.default=function(){return t.a.createElement(s.a,{language:"javascript",showLineNumbers:!0,style:r.a},"(num) => num + 1")}}}]);
+//# sourceMappingURL=11.9a65ded1.chunk.js.map
